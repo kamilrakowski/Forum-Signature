@@ -2,6 +2,8 @@
 // Licensed under WTF-PL <http://wtfpl.org/>
 // Do whatever the fuck you want with this.
 
+// Originally by Flashwave
+
 header('Content-Type: image/png');
 
 $img = imagecreatetruecolor(600, 70);
@@ -13,42 +15,42 @@ imagefilledrectangle($img, 0, 0, 600, 70, $rekt);
 
 imagealphablending($img, true);
 
-$imgFw	= imagecreatefrompng('flashwave.png');
+$imgFw	= imagecreatefrompng('kamil.png');
 imagecopyresampled($img, $imgFw, 0, 0, 0, 0, 600, 70, 600, 70);
 
 imagealphablending($img, true);
 
-$skype	= file_get_contents('http://mystatus.skype.com/flashwave69.num');
+$skype	= file_get_contents('http://mystatus.skype.com/kmil2002.num');
 $bgc	= imagecolorallocate($img, 17, 17, 17);
 $txtc	= imagecolorallocate($img, 255, 255, 255);
 $skypeT	= imagecolorallocate($img, 100, 100, 100);
 $font	= imageloadfont('sigfont.gdf');
 
-imagestring($img,	$font, 280, 6, "Skype:  flashwave69",				$txtc);
-imagestring($img,	$font, 280, 21, "Site:   http://flash.moe/",		$txtc);
-imagestring($img,	$font, 280, 36, "E-mail: flashwave@flashii.net",	$txtc);
+imagestring($img,	$font, 280, 6, "Skype:  kmil2002",				$txtc);
+imagestring($img,	$font, 280, 21, "Site:   http://krakow.pw/",		$txtc);
+imagestring($img,	$font, 280, 36, "E-mail: admin@krakow.pw",	$txtc);
 
-if(isset($_GET['f'])) {
-	switch($_GET['f']) {
-		case 'malwareup':
+if(isset($_GET['r'])) {
+	switch($_GET['r']) {
+		case 'chatmod':
 			$modC = imagecolorallocate($img, 0, 153, 255);
 			imagestring($img, $font, 280, 51, "Chat Moderator", $modC);
 		break;
-		case 'saibateku':
+		case 'developer':
 			$modC = imagecolorallocate($img, 130, 76, 160);
 			imagestring($img, $font, 280, 51, "Site Developer", $modC);
 		break;
-		case 'halext':
+		case 'globalmod':
 			$modC = imagecolorallocate($img, 0, 102, 255);
 			imagestring($img, $font, 280, 51, "Global Moderator", $modC);
 		break;
-		case 'flashii':
+		case 'admin':
 			$modC = imagecolorallocate($img, 170, 0, 0);
 			imagestring($img, $font, 280, 51, "Administrator", $modC);
 		break;
-		case 'nookls':
-			$modC = imagecolorallocate($img, 122, 82, 48);
-			imagestring($img, $font, 280, 51, "Feet Rubber", $modC);
+		case 'banned':
+			$modC = imagecolorallocate($img, 46, 46, 46);
+			imagestring($img, $font, 280, 51, "Banned", $modC);
 		break;
 		default:
 			$modC = imagecolorallocate($img, 255, 255, 255);
